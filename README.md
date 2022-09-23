@@ -1,4 +1,6 @@
-# PequeniaTV-API
+![asd](https://lh6.googleusercontent.com/9h138ChjX7P-To230FPSV6EGQo7SZqZSeXPFCq7zgCUDvyET0hWCz_Bbnl__jVZoQAo=w2400 "asd")
+
+
 PequeniaTV-API is a project with a simple CRUD operations with NodeJS and Mongo.
 I'm using Express and Mongoose.
 
@@ -49,15 +51,41 @@ Remember alwayas add an Authorization Header
 
 
 ### Insert
-```curl
+```
 curl --location --request POST 'http://localhost:3600/channels' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzIzYWQ3YWFmNGYzNzNjMzg0MGUxYzMiLCJlbWFpbCI6Imdhc3Rvbi5mcmlhc0B1c2V0LmNvbSIsInBlcm1pc3Npb25MZXZlbCI6NSwicHJvdmlkZXIiOiJlbWFpbCIsIm5hbWUiOiJHYXN0b24gRnJpYXMiLCJyZWZyZXNoS2V5IjoiNHlUeXNaUVlWSnJLVEhRckw0dzltZz09IiwiaWF0IjoxNjYzNzk5ODEwfQ.CmBOzc8nEUymebRveLH-AVLgY_Yo9Zq03zR7tCjdvvU' \
+--header 'Authorization: Bearer your_very_very_long_token' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "name": "Name2",
-    "source": "Source2",
-    "logo": "Logo2",
-    "channel": "Channel2",
-    "section": "Section2"
+    "name": "TheGreatName",
+    "source": "TheGreatSource",
+    "logo": "TheGreatLogo",
+    "channel": "TheGreatChannel",
+    "section": "TheGreatSection"
 }'
 ```
+
+### Get (by ID)
+```
+curl --location --request GET 'http://localhost:3600/channels/:id' \
+--header 'Authorization: Bearer your_very_very_long_token'
+```
+
+### Update (by ID)
+```
+curl --location --request PATCH 'http://localhost:3600/channels/:id' \
+--header 'Authorization: Bearer your_very_very_long_token' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "UpdatedName",
+    "source": "UpdatedSource",
+    "logo": "UpdatedLogo",
+    "channel": "UpdatedChannel",
+    "section": "UpdatedSection",
+    "id": "TheSameID"
+}'
+```
+
+### Delete (by ID)
+```
+curl --location --request DELETE 'http://localhost:3600/channels/:id' \
+--header 'Authorization: Bearer your_very_very_long_token'
