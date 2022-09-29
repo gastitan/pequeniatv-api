@@ -13,7 +13,7 @@ const options = {
 };
 const connectWithRetry = () => {
     console.log('MongoDB connection with retry')
-    mongoose.connect("mongodb://myuser:mypassword@localhost:27017/rest-tutorial?authSource=admin&w=1", options).then(()=>{
+    mongoose.connect("mongodb+srv://pequeniadmin:g2j2gQCh1gy3e3Pt@cluster0.wcjm18j.mongodb.net/?retryWrites=true&w=majority", options).then(()=>{
         console.log('MongoDB is connected')
     }).catch(err=>{
         console.log('MongoDB connection unsuccessful, retry after 5 seconds. ', ++count);
